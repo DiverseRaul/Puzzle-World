@@ -35,6 +35,19 @@ function Shared.OnStart()
 	end
 	Players.PlayerAdded:Connect(Local.LoadProfile)
 	Players.PlayerRemoving:Connect(Local.RemoveProfile)
+
+	task.spawn(Local.TrackPlayTime)
+end
+
+function Local.TrackPlayTime()
+	while task.wait(60) do
+		for _, Player in Players:GetPlayers() do
+			local Data = Shared.GetData(Player)
+			if Data then
+				Data.Stats.TotalPlayTime += 60
+			end
+		end
+	end
 end
 
 function Local.LoadProfile(Player: Player)

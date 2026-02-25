@@ -8,6 +8,10 @@ Shared.DEFAULT_PLAYER_DATA = {
 		PuzzleCoins = 0,
 		VipStars = 0,
 	},
+	Stats = {
+		PuzzlesSolved = 0,
+		TotalPlayTime = 0,
+	},
 	Status = {
 		PreTester = false,
 		NewestUpdate = false,
